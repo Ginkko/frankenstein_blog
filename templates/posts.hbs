@@ -1,6 +1,14 @@
 <h1>Young (Zombie) Frankenstien's Blog</h1>
 <ul>
-  <li><a href="#">Brains</a></li>
+  <!-- <li><a href="#">Brains</a></li>
   <li><a href="#">More Brains</a></li>
-  <li><a href="#">Igor (pronounced "eye-gore")</a></li>
+  <li><a href="#">Igor (pronounced "eye-gore")</a></li> -->
+  {{#each}}
+    <li>{{#link-to 'post' id}}{{title}} {{/link-to}}</li>
+      <ul>
+        <li>{{body}}</li>
+      </ul>
+  {{/each}}
 </ul>
+
+<button class='btn btn-info' {{action 'sortByTitle'}}>Sort</button>
